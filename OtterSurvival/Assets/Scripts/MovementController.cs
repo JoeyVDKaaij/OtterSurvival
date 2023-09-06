@@ -1,10 +1,4 @@
-using System;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 // This script requires the GameObject to have a Rigidbody component
 [RequireComponent(typeof(Rigidbody))]
@@ -43,9 +37,6 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxis("Mouse X"));
-        Debug.Log(Input.GetAxis("Mouse Y"));
-
         if (!useForce) rb.velocity = Vector3.zero;
         if (!useTorque) rb.angularVelocity = Vector3.zero;
         if (Input.GetKey(KeyCode.W) && !useForce)
