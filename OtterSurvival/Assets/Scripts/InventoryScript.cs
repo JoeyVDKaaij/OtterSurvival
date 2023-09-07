@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryScript : MonoBehaviour
 {
     private List<ItemObject> itemsInInventory = new List<ItemObject>();
+    [SerializeField]
     private float maxGrabDistance = 1.1f;
 
     // Update is called once per frame
@@ -14,10 +15,11 @@ public class InventoryScript : MonoBehaviour
         Vector3 direction = transform.forward;
         RaycastHit hitInfo;
 
-        Debug.DrawRay(origin, direction * 10, Color.magenta);
+        Debug.DrawLine(origin, direction * 10000, Color.magenta);
 
         if (Physics.Raycast(origin, direction, out hitInfo, maxGrabDistance))
         {
+            Debug.Log("Hit");
             GameObject hitItem = hitInfo.collider.gameObject;
             if (hitItem.CompareTag("Object"))
             {
