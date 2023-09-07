@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
@@ -15,11 +16,8 @@ public class InventoryScript : MonoBehaviour
         Vector3 direction = transform.forward;
         RaycastHit hitInfo;
 
-        Debug.DrawLine(origin, direction * 10000, Color.magenta);
-
         if (Physics.Raycast(origin, direction, out hitInfo, maxGrabDistance))
         {
-            Debug.Log("Hit");
             GameObject hitItem = hitInfo.collider.gameObject;
             if (hitItem.CompareTag("Object"))
             {
@@ -30,13 +28,16 @@ public class InventoryScript : MonoBehaviour
                 OpenGate(hitItem);
             }
         }
+
+        if (itemsInInventory.Count > 0)
+            Debug.Log(itemsInInventory[0]);
     }
 
     private void ObtainKey(GameObject key)
     {
         if (Input.GetKey(KeyCode.F))
         {
-            itemsInInventory.Append(key.GetComponent<ItemScript>().item);
+            itemsInInventory.Add(key.GetComponent<ItemScript>().item);
             Destroy(key);
         }
     }
@@ -45,18 +46,18 @@ public class InventoryScript : MonoBehaviour
     {
         if (itemsInInventory.Count > 0)
         {
-            int[] keysOwned = { };
+            int keysOwned = -1;
             for (int i = 0; i < itemsInInventory.Count; i++)
             {
                 if (itemsInInventory[i].type == ItemObject.ItemType.Key)
                 {
-                    keysOwned.Append(i);
+                    keysOwned = i;
                 }
             }
-            if (keysOwned.Length > 0 && Input.GetKey(KeyCode.F))
+            if (keysOwned >= 0 && Input.GetKey(KeyCode.F))
             {
                 Destroy(gate);
-                itemsInInventory.Remove(itemsInInventory[keysOwned.Last()]);
+                itemsInInventory.Remove(itemsInInventory[keysOwned]);
             }
         }
     }
