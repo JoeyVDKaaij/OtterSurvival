@@ -19,6 +19,7 @@ public class InventoryScript : MonoBehaviour
         if (Physics.Raycast(origin, direction, out hitInfo, maxGrabDistance))
         {
             GameObject hitItem = hitInfo.collider.gameObject;
+            Debug.Log("pickup range");
             if (hitItem.CompareTag("Object"))
             {
                 ObtainKey(hitItem);
