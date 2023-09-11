@@ -6,6 +6,7 @@ public class MovementController : MonoBehaviour
 {
     private float forwardAxis;
     private float rightAxis;
+    private float upAxis;
     [SerializeField]
     private float movementVelocityMultiplier = 5;
 
@@ -36,6 +37,7 @@ public class MovementController : MonoBehaviour
         // Check button press based on horizontal input or vertical imput (WASD or Arrow keys)
         forwardAxis = Input.GetAxis("Vertical");
         rightAxis = Input.GetAxis("Horizontal");
+        upAxis = Input.GetAxis("Raise");
 
         // Rotations using mouse
         rotation.x = Input.GetAxis("Mouse X");
@@ -59,6 +61,7 @@ public class MovementController : MonoBehaviour
         // Movement using force
         rb.AddForce(transform.forward * movementVelocityMultiplier * forwardAxis);
         rb.AddForce(transform.right * movementVelocityMultiplier * rightAxis);
+        rb.AddForce(transform.up * movementVelocityMultiplier * upAxis);
     }
 
     #endregion
