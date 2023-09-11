@@ -4,15 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementController : MonoBehaviour
 {
+    private float forwardAxis;
+    private float rightAxis;
     [SerializeField]
     private float movementVelocityMultiplier = 5;
-    [SerializeField]
-    private float rotationSpeed = 10;
-    private bool underWater = false;
-    [SerializeField]
-    private bool useForce = false;
-    [SerializeField]
-    private bool useTorque = false;
 
     Vector2 rotation;
     Vector2 currentRotation;
@@ -25,67 +20,45 @@ public class MovementController : MonoBehaviour
 
     private Rigidbody rb;
 
+    // Initiate variables
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
+        // Comment this out if you want to move your mouse anywhere freely during play mode
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     #region Movements
 
-    // Update is called once per frame
     void Update()
     {
-        if (!useForce) rb.velocity = Vector3.zero;
-        if (!useTorque) rb.angularVelocity = Vector3.zero;
-        if (Input.GetKey(KeyCode.W) && !useForce)
-        {
-            rb.velocity = transform.forward * movementVelocityMultiplier;
-        }
-        if (Input.GetKey(KeyCode.S) && !useForce)
-        {
-            rb.velocity = -transform.forward * movementVelocityMultiplier;
-        }
+        // Check button press based on horizontal input or vertical imput (WASD or Arrow keys)
+        forwardAxis = Input.GetAxis("Vertical");
+        rightAxis = Input.GetAxis("Horizontal");
 
+        // Rotations using mouse
         rotation.x = Input.GetAxis("Mouse X");
         rotation.y = Input.GetAxis("Mouse Y");
 
+        // Apply sensitivity
         rotation *= sensitivity;
 
+        // Set the current rotation
         currentRotation += rotation;
 
+        // Set the Y rotation between the set min or max rotation degrees if it goes over the limit
         currentRotation.y = Mathf.Clamp(currentRotation.y, minYRotation, maxYRotation);
 
-        if (useTorque)
-        {
-            rb.AddTorque(new Vector3(rotation.y, rotation.x, 0) * sensitivity);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(currentRotation.y, currentRotation.x, 0));
-        }
+        // Apply the rotation variable to the actual rotation of the gameobject
+        transform.rotation = Quaternion.Euler(new Vector3(currentRotation.y, currentRotation.x, 0));
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W) && useForce)
-        {
-            //rb.AddRelativeForce(transform.forward * movementVelocityMultiplier);
-            rb.AddForce(transform.forward * movementVelocityMultiplier);
-        }
-        if (Input.GetKey(KeyCode.S) && useForce)
-        {
-            rb.AddForce(-transform.forward * movementVelocityMultiplier);
-        }
-        if (Input.GetKey(KeyCode.A) && useTorque)
-        {
-            rb.angularVelocity = new Vector3(0, -rotationSpeed, 0);
-        }
-        if (Input.GetKey(KeyCode.D) && useTorque)
-        {
-            rb.angularVelocity = new Vector3(0, rotationSpeed, 0);
-        }
+        // Movement using force
+        rb.AddForce(transform.forward * movementVelocityMultiplier * forwardAxis);
+        rb.AddForce(transform.right * movementVelocityMultiplier * rightAxis);
     }
 
     #endregion
