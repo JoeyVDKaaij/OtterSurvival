@@ -34,14 +34,14 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        // Check button press based on horizontal input or vertical imput (WASD or Arrow keys)
+        // Check button press based on horizontal input or vertical imput (WASD or Arrow keys for example)
         forwardAxis = Input.GetAxis("Vertical");
         rightAxis = Input.GetAxis("Horizontal");
         upAxis = Input.GetAxis("Raise");
 
         // Rotations using mouse
         rotation.x = Input.GetAxis("Mouse X");
-        rotation.y = Input.GetAxis("Mouse Y");
+        rotation.y = -Input.GetAxis("Mouse Y");
 
         // Apply sensitivity
         rotation *= sensitivity;
