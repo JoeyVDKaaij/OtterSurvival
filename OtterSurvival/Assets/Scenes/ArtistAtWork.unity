@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 145118551}
   m_Layer: 0
   m_Name: Test_underwater_volume
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,8 +362,8 @@ Transform:
   m_GameObject: {fileID: 145118549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -242.2, y: 106, z: -130.3}
-  m_LocalScale: {x: 80.974945, y: 16.481167, z: 142.27248}
+  m_LocalPosition: {x: -298.4, y: 67.033, z: -296}
+  m_LocalScale: {x: 1, y: 2.2195, z: 1.1331}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1441671317}
@@ -404,8 +404,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 674.38, y: 24.854, z: 584.79}
+  m_Center: {x: 336.69, y: 11.927, z: 291.89}
 --- !u!4 &200348361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2753359169181839440, guid: 82fc2bab948c0484f9cde0c3986c4195,
@@ -546,7 +546,7 @@ Transform:
   m_GameObject: {fileID: 248082243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -242.3, y: 110, z: -138.6}
+  m_LocalPosition: {x: -242.3, y: 105.2, z: -138.6}
   m_LocalScale: {x: 13.323, y: 11.7817955, z: 13.323}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 176dda84375b1a14fbe6aca99fb51bbd, type: 2}
@@ -886,6 +886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746236580510802823, guid: 87cb944804453554f95b95ae6b00978a,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 8546934527889653795, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
@@ -1765,12 +1770,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492915383}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.78, y: 41.32, z: 160.02}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -240.84, y: 108.853004, z: -139.67}
   m_LocalScale: {x: 2.239821, y: 2.239821, z: 2.239821}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1441671317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505215376
 GameObject:
@@ -4417,6 +4422,7 @@ Transform:
   m_Children:
   - {fileID: 145118550}
   - {fileID: 248082244}
+  - {fileID: 492915387}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475935711
@@ -4841,7 +4847,7 @@ GameObject:
   - component: {fileID: 1596911045}
   m_Layer: 0
   m_Name: Box volume
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5400,7 +5406,7 @@ GameObject:
   - component: {fileID: 1751722875}
   m_Layer: 0
   m_Name: EF-WaterFog
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5418,7 +5424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
-  priority: 2.12
+  priority: 0
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: c0c42ddd2fd2ec04f896c637a048635b, type: 2}
@@ -6398,4 +6404,3 @@ SceneRoots:
   - {fileID: 1875182603}
   - {fileID: 1429866694}
   - {fileID: 1441671317}
-  - {fileID: 492915387}
