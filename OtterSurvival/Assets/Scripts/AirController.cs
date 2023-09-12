@@ -30,12 +30,10 @@ public class AirController : MonoBehaviour
             air += increaseAirSpeed; 
             air += decreaseAirSpeed;
 
-            // If Air goes over the limit return it to maximum value
-            air = Mathf.Clamp(air, 0, maxAirTime);
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Breathing mechanic
         air -= decreaseAirSpeed;
@@ -49,6 +47,10 @@ public class AirController : MonoBehaviour
             // Implement death
             Debug.Log("You died");
         }
+
+        Debug.Log(air);
+        // If Air goes over the limit return it to maximum value
+        air = Mathf.Clamp(air, 0, maxAirTime);
     }
 
     #endregion
