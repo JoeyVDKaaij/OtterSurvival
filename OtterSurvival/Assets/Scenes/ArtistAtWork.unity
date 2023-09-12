@@ -682,22 +682,22 @@ PrefabInstance:
     - target: {fileID: 528907962473638239, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: movementVelocityMultiplier
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1249412381890968386, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 117.1
+      value: 62.35
       objectReference: {fileID: 0}
     - target: {fileID: 1249412381890968386, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.7
+      value: 34.7
       objectReference: {fileID: 0}
     - target: {fileID: 1249412381890968386, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 221.8
+      value: 193.46
       objectReference: {fileID: 0}
     - target: {fileID: 1249412381890968386, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
