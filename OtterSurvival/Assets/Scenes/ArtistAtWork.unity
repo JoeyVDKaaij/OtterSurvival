@@ -828,12 +828,12 @@ PrefabInstance:
     - target: {fileID: 5030851023937943503, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: maxAirTime
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5030851023937943503, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: decreaseAirSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546934527889653795, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
@@ -1483,7 +1483,6 @@ GameObject:
   m_Component:
   - component: {fileID: 385200644}
   - component: {fileID: 385200646}
-  - component: {fileID: 385200645}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1513,18 +1512,6 @@ RectTransform:
   m_AnchoredPosition: {x: 143.74158, y: 51.300003}
   m_SizeDelta: {x: 249.1539, y: 68.209}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &385200645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385200643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d43874ed9e20aec4393d21b5e0da4d39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &385200646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,7 +1577,7 @@ GameObject:
   - component: {fileID: 405020823}
   m_Layer: 0
   m_Name: Roof collision
-  m_TagString: Untagged
+  m_TagString: Sky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
