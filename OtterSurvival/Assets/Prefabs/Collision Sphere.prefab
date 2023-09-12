@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6286231528833436708}
   - component: {fileID: 218034522554777738}
   - component: {fileID: 528907962473638239}
+  - component: {fileID: 5030851023937943503}
   m_Layer: 0
   m_Name: Collision Sphere
   m_TagString: Untagged
@@ -148,12 +149,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVelocityMultiplier: 10
-  rotationSpeed: 10
-  useForce: 1
-  useTorque: 0
   sensitivity: 2
   minYRotation: -45
   maxYRotation: 45
+--- !u!114 &5030851023937943503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489774524044802757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec1539f0432f648ab161a591af39a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAirTime: 100
+  decreaseAirSpeed: 5
+  increaseAirSpeed: 10
 --- !u!1 &7045144735562653549
 GameObject:
   m_ObjectHideFlags: 0
