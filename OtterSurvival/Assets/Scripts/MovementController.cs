@@ -7,8 +7,17 @@ public class MovementController : MonoBehaviour
     private float forwardAxis;
     private float rightAxis;
     private float upAxis;
+    private float airSlowdownMultiplier;
     [SerializeField]
     private float movementVelocityMultiplier = 5;
+
+
+    private float airSlowdownStandard = 1;
+    [SerializeField]
+    private float airSlowdown = 0.5f;
+
+    [SerializeField]
+    private Animator animator;
 
     Vector2 rotation;
     Vector2 currentRotation;
@@ -28,11 +37,26 @@ public class MovementController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
+        airSlowdownMultiplier = airSlowdownStandard;
         // Comment this out if you want to move your mouse anywhere freely during play mode
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     #region Movements
+
+    private void OnCollisionStay(Collision collision)
+    {
+        // Set movement speed above water vs under water
+        if (collision.collider.CompareTag("Sky"))
+        {
+            airSlowdownMultiplier = airSlowdown; 
+            
+        }
+        else
+        {
+            airSlowdownMultiplier = airSlowdownStandard;
+        }
+    }
 
     void Update()
     {
@@ -46,6 +70,9 @@ public class MovementController : MonoBehaviour
             // Rotations using mouse
             rotation.x = Input.GetAxis("Mouse X");
             rotation.y = -Input.GetAxis("Mouse Y");
+
+            // Set animation
+            animator.SetFloat("Speed", forwardAxis);
 
             // Apply sensitivity
             rotation *= sensitivity;
@@ -66,9 +93,9 @@ public class MovementController : MonoBehaviour
         if (!gameOver)
         {
             // Movement using force
-            rb.AddForce(transform.forward * movementVelocityMultiplier * forwardAxis);
-            rb.AddForce(transform.right * movementVelocityMultiplier * rightAxis);
-            rb.AddForce(transform.up * movementVelocityMultiplier * upAxis);
+            rb.AddForce(transform.forward * movementVelocityMultiplier * airSlowdownMultiplier * forwardAxis);
+            rb.AddForce(transform.right * movementVelocityMultiplier * airSlowdownMultiplier * rightAxis);
+            rb.AddForce(transform.up * movementVelocityMultiplier * airSlowdownMultiplier * upAxis);
         }
     }
 
