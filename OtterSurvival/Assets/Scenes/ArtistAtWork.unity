@@ -11430,6 +11430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate (Example)
       objectReference: {fileID: 0}
+    - target: {fileID: 468981171164154952, guid: 0e06cd5386d1d77439907ff6f145af1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5862435272460646304, guid: 0e06cd5386d1d77439907ff6f145af1f,
         type: 3}
       propertyPath: m_LocalScale.x
