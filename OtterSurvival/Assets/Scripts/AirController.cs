@@ -1,4 +1,10 @@
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AirController : MonoBehaviour
@@ -7,13 +13,25 @@ public class AirController : MonoBehaviour
     private Slider slider;
     [SerializeField]
     private float maxAirTime = 100;
-    public float decreaseAirSpeed = 5;
+    [SerializeField]
+    private float decreaseAirSpeed = 5;
     [SerializeField]
     private float increaseAirSpeed = 10;
     private float air;
 
+    private PlayableDirector deathAnimation;
+    private bool firstPlay = true;
+    private Volume volume;
+    private Vignette lowAir;
+
     void Start()
     {
+        deathAnimation = GetComponent<PlayableDirector>();
+        volume = GetComponentInChildren<Volume>();
+        if (volume != null)
+        {
+            volume.profile.TryGet(out lowAir);
+        }
         air = maxAirTime;
         slider.maxValue = maxAirTime;
     }
@@ -29,7 +47,6 @@ public class AirController : MonoBehaviour
             // Return decrease air and add increase air on top of it
             air += increaseAirSpeed; 
             air += decreaseAirSpeed;
-
         }
     }
 
@@ -42,17 +59,64 @@ public class AirController : MonoBehaviour
         slider.value = air;
 
         // Game kills you if you don't have any air left
-        if (air <= 0)
+        if (air <= 0) Death();
+
+        // Sets the intensity of the vignette
+        if (air <= maxAirTime/2 && lowAir != null)
         {
-            // Implement death
-            Debug.Log("You died");
+            lowAir.intensity.value = air / maxAirTime;
+            lowAir.intensity.value = Mathf.Clamp(lowAir.intensity.value, 0, 0.5f);
+        }
+        else if (lowAir != null)
+        {
+            lowAir.intensity.value = 0;
         }
 
-        Debug.Log(air);
         // If Air goes over the limit return it to maximum value
         air = Mathf.Clamp(air, 0, maxAirTime);
     }
 
+    public void AddedDecreaseAirSpeed(float pDecreaseAirSpeed)
+    {
+        air -= pDecreaseAirSpeed;
+    }
+
     #endregion
 
+    #region Game Over
+
+    private void Death()
+    {
+        // Makes sure the player can't move
+        gameObject.GetComponent<MovementController>().gameOver = true;
+        gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+
+        // Sees if the deathanimation is applied in the inspector
+        // Otherwise go directly to the game over scene
+        if (deathAnimation != null)
+        {
+            // Checks if this is the first time the death scene will be played
+            if (firstPlay)
+            {
+                deathAnimation.Play();
+                firstPlay = false;
+            }
+
+            // Once the death scene has been played at least once and it's not playing anymore. Go to game over scene
+            if (deathAnimation.state != PlayState.Playing && !firstPlay)
+            {
+                // Death scene
+                int lastSceneBuildIndex = SceneManager.sceneCountInBuildSettings - 1;
+                SceneManager.LoadScene(lastSceneBuildIndex);
+            }
+        }
+        else
+        {
+            // Death scene
+            int lastSceneBuildIndex = SceneManager.sceneCountInBuildSettings - 1;
+            SceneManager.LoadScene(lastSceneBuildIndex);
+        }
+    }
+
+    #endregion
 }

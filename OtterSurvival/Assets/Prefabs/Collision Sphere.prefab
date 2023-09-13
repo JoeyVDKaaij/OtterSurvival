@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 218034522554777738}
   - component: {fileID: 528907962473638239}
   - component: {fileID: 5030851023937943503}
+  - component: {fileID: 8463510414797052612}
   m_Layer: 0
   m_Name: Collision Sphere
   m_TagString: Untagged
@@ -152,6 +153,7 @@ MonoBehaviour:
   sensitivity: 2
   minYRotation: -45
   maxYRotation: 45
+  gameOver: 0
 --- !u!114 &5030851023937943503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,9 +166,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ec1539f0432f648ab161a591af39a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
   maxAirTime: 100
   decreaseAirSpeed: 5
   increaseAirSpeed: 10
+--- !u!320 &8463510414797052612
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489774524044802757}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 1a9c99199e8e7da4ca29bd81190abe8b, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3315212570462317273, guid: 1a9c99199e8e7da4ca29bd81190abe8b, type: 2}
+    value: {fileID: 4546320569840186978}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &7045144735562653549
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +202,8 @@ GameObject:
   - component: {fileID: 7464901239399350152}
   - component: {fileID: 2533191544067567665}
   - component: {fileID: 8546934527889653795}
+  - component: {fileID: 4546320569840186978}
+  - component: {fileID: 2274301798475580416}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -318,3 +342,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxGrabDistance: 10.3
+--- !u!95 &4546320569840186978
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045144735562653549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2274301798475580416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045144735562653549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7068e01df471b90499b6c29ab13ded80, type: 2}

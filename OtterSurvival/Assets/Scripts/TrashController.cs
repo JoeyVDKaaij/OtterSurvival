@@ -3,15 +3,11 @@ using UnityEngine;
 public class TrashController : MonoBehaviour
 {
     [SerializeField]
-    private float decreaseAirSpeed = 10f;
+    private float addedDecreaseAirTime = 10f;
 
-    private void OnCollisionStay(Collision collision)
+    // Decrease more air given by the number above or in the inspector
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.collider.CompareTag("Player")) collision.gameObject.GetComponent<AirController>().decreaseAirSpeed = decreaseAirSpeed;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.CompareTag("Player")) collision.gameObject.GetComponent<AirController>().decreaseAirSpeed = decreaseAirSpeed;
+        if (other.gameObject.CompareTag("Player")) other.gameObject.GetComponent<AirController>().AddedDecreaseAirSpeed(addedDecreaseAirTime);
     }
 }

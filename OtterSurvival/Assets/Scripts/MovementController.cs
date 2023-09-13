@@ -21,6 +21,8 @@ public class MovementController : MonoBehaviour
 
     private Rigidbody rb;
 
+    public bool gameOver = false;
+
     // Initiate variables
     void Start()
     {
@@ -34,34 +36,40 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        // Check button press based on horizontal input or vertical imput (WASD or Arrow keys for example)
-        forwardAxis = Input.GetAxis("Vertical");
-        rightAxis = Input.GetAxis("Horizontal");
-        upAxis = Input.GetAxis("Raise");
+        if (!gameOver)
+        {
+            // Check button press based on horizontal input or vertical imput (WASD or Arrow keys for example)
+            forwardAxis = Input.GetAxis("Vertical");
+            rightAxis = Input.GetAxis("Horizontal");
+            upAxis = Input.GetAxis("Raise");
 
-        // Rotations using mouse
-        rotation.x = Input.GetAxis("Mouse X");
-        rotation.y = -Input.GetAxis("Mouse Y");
+            // Rotations using mouse
+            rotation.x = Input.GetAxis("Mouse X");
+            rotation.y = -Input.GetAxis("Mouse Y");
 
-        // Apply sensitivity
-        rotation *= sensitivity;
+            // Apply sensitivity
+            rotation *= sensitivity;
 
-        // Set the current rotation
-        currentRotation += rotation;
+            // Set the current rotation
+            currentRotation += rotation;
 
-        // Set the Y rotation between the set min or max rotation degrees if it goes over the limit
-        currentRotation.y = Mathf.Clamp(currentRotation.y, minYRotation, maxYRotation);
+            // Set the Y rotation between the set min or max rotation degrees if it goes over the limit
+            currentRotation.y = Mathf.Clamp(currentRotation.y, minYRotation, maxYRotation);
 
-        // Apply the rotation variable to the actual rotation of the gameobject
-        transform.rotation = Quaternion.Euler(new Vector3(currentRotation.y, currentRotation.x, 0));
+            // Apply the rotation variable to the actual rotation of the gameobject
+            transform.rotation = Quaternion.Euler(new Vector3(currentRotation.y, currentRotation.x, 0));
+        }
     }
 
     private void FixedUpdate()
     {
-        // Movement using force
-        rb.AddForce(transform.forward * movementVelocityMultiplier * forwardAxis);
-        rb.AddForce(transform.right * movementVelocityMultiplier * rightAxis);
-        rb.AddForce(transform.up * movementVelocityMultiplier * upAxis);
+        if (!gameOver)
+        {
+            // Movement using force
+            rb.AddForce(transform.forward * movementVelocityMultiplier * forwardAxis);
+            rb.AddForce(transform.right * movementVelocityMultiplier * rightAxis);
+            rb.AddForce(transform.up * movementVelocityMultiplier * upAxis);
+        }
     }
 
     #endregion
