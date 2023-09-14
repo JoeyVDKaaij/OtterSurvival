@@ -32,6 +32,9 @@ public class MovementController : MonoBehaviour
 
     public bool gameOver = false;
 
+    public GameObject Bubbles;
+    Billboard script;
+
     // Initiate variables
     void Start()
     {
@@ -40,6 +43,9 @@ public class MovementController : MonoBehaviour
         airSlowdownMultiplier = airSlowdownStandard;
         // Comment this out if you want to move your mouse anywhere freely during play mode
         Cursor.lockState = CursorLockMode.Locked;
+
+        script = Bubbles.GetComponent<Billboard>();
+        script.enabled = false;
     }
 
     #region Movements
@@ -52,10 +58,16 @@ public class MovementController : MonoBehaviour
             airSlowdownMultiplier = airSlowdown; 
             
         }
-        else
+
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Sky"))
         {
             airSlowdownMultiplier = airSlowdownStandard;
         }
+            
     }
 
     void Update()
@@ -96,6 +108,10 @@ public class MovementController : MonoBehaviour
             rb.AddForce(transform.forward * movementVelocityMultiplier * airSlowdownMultiplier * forwardAxis);
             rb.AddForce(transform.right * movementVelocityMultiplier * airSlowdownMultiplier * rightAxis);
             rb.AddForce(transform.up * movementVelocityMultiplier * airSlowdownMultiplier * upAxis);
+        }
+        if (gameOver)
+        {
+            script.enabled = true;
         }
     }
 
