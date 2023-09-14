@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   maxAirTime: 100
-  decreaseAirSpeed: 0.01
+  decreaseAirSpeed: 0.05
   increaseAirSpeed: 10
 --- !u!320 &8463510414797052612
 PlayableDirector:
@@ -192,6 +192,12 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 0}
     value: {fileID: 0}
+  - key: {fileID: 5629115891122126929, guid: 1a9c99199e8e7da4ca29bd81190abe8b, type: 2}
+    value: {fileID: 8404202743549910881}
+  - key: {fileID: 390252372035321624, guid: 1a9c99199e8e7da4ca29bd81190abe8b, type: 2}
+    value: {fileID: 2992800576661377471}
+  - key: {fileID: -4097862917073976498, guid: 1a9c99199e8e7da4ca29bd81190abe8b, type: 2}
+    value: {fileID: 150209517843878034}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &2477290782848117555
@@ -498,6 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3996907999954457073}
   - component: {fileID: 4081949290508477410}
+  - component: {fileID: 6004168167621016453}
   m_Layer: 0
   m_Name: 3rd person VCam
   m_TagString: Untagged
@@ -539,8 +546,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 1249412381890968386}
+  m_Follow: {fileID: 1249412381890968386}
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 5
@@ -567,6 +574,20 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 7695037869400252388}
+--- !u!114 &6004168167621016453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404202743549910881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7ea2d20ae2ef841ac90e49c939e3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxGrabDistance: 1.1
+  interaction: 102
 --- !u!1001 &4100927884598052879
 PrefabInstance:
   m_ObjectHideFlags: 0
