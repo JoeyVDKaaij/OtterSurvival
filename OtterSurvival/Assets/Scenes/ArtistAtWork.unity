@@ -1025,9 +1025,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &207595841
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 05308d4dddb6f024683b2b56d913fa22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1688677716}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -1041,9 +1041,9 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &207595842
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05308d4dddb6f024683b2b56d913fa22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1688677716}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207595841}
   serializedVersion: 2
@@ -1614,7 +1614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &340369753
 MeshRenderer:
   m_ObjectHideFlags: 0
