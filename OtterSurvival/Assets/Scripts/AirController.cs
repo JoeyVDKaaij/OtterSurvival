@@ -1,7 +1,5 @@
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -64,7 +62,7 @@ public class AirController : MonoBehaviour
         // Sets the intensity of the vignette
         if (air <= maxAirTime/2 && lowAir != null)
         {
-            lowAir.intensity.value = air / maxAirTime;
+            lowAir.intensity.value = 0.5f - (air / maxAirTime);
             lowAir.intensity.value = Mathf.Clamp(lowAir.intensity.value, 0, 0.5f);
         }
         else if (lowAir != null)
