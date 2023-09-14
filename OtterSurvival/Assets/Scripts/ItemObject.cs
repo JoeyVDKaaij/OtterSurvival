@@ -6,6 +6,7 @@ public class ItemObject : ScriptableObject
     public enum ItemType
     {
         Null,  
+        Gate,
         Key
     }
 
