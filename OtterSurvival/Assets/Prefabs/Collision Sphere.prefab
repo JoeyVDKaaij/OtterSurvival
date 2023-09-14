@@ -55,7 +55,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489774524044802757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -152,10 +152,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVelocityMultiplier: 20
   airSlowdown: 0.5
-  animator: {fileID: 0}
+  animator: {fileID: 4769866824690336021}
   sensitivity: 2
-  minYRotation: -75
-  maxYRotation: 75
+  minYRotation: -55
+  maxYRotation: 55
   gameOver: 0
   Bubbles: {fileID: 7307322538833046547}
 --- !u!114 &5030851023937943503
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   maxAirTime: 100
-  decreaseAirSpeed: 5
+  decreaseAirSpeed: 0.01
   increaseAirSpeed: 10
 --- !u!320 &8463510414797052612
 PlayableDirector:
@@ -459,6 +459,12 @@ PrefabInstance:
 --- !u!4 &393816226599802279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4440111538773302696, guid: 1e16b2deade6b984b925f5ceb12d2575,
+    type: 3}
+  m_PrefabInstance: {fileID: 4100927884598052879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4769866824690336021 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8851988568904599834, guid: 1e16b2deade6b984b925f5ceb12d2575,
     type: 3}
   m_PrefabInstance: {fileID: 4100927884598052879}
   m_PrefabAsset: {fileID: 0}
