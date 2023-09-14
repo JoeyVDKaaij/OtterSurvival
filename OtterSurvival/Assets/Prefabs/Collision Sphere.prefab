@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7ea2d20ae2ef841ac90e49c939e3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxGrabDistance: 10.3
+  maxGrabDistance: 5
 --- !u!95 &4546320569840186978
 Animator:
   serializedVersion: 5
