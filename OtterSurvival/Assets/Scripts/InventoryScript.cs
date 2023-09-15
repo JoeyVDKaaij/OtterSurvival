@@ -7,6 +7,9 @@ public class InventoryScript : MonoBehaviour
     [SerializeField]
     private float maxGrabDistance = 1.1f;
 
+    [SerializeField]
+    private KeyCode interaction = KeyCode.F;
+
     #region RayCast and Hits
 
     void Update()
@@ -28,6 +31,19 @@ public class InventoryScript : MonoBehaviour
             if (hitItem.CompareTag("Gate"))
             {
                 OpenGate(hitItem);
+            }
+            if (hitItem.CompareTag("Cage"))
+            {
+                bool itemUsed = false;
+                foreach (ItemObject item in itemsInInventory)
+                {
+                    // Checks if you have the right key and open the gate
+                    if (item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction))
+                    {
+                        hitItem.GetComponent<OtterCageScript>().GateOpen();
+                        itemUsed = true;
+                    }
+                }
             }
         }
     }
@@ -52,18 +68,14 @@ public class InventoryScript : MonoBehaviour
         // If you have key remove the latest key from list and remove the hit gate object when pressing F
         if (itemsInInventory.Count > 0)
         {
-            int keysOwned = -1;
-            for (int i = 0; i < itemsInInventory.Count; i++)
+            bool itemUsed = false;
+            foreach (ItemObject item in itemsInInventory)
             {
-                if (itemsInInventory[i].type == ItemObject.ItemType.Key)
+                if (item == gate.GetComponent<ItemScript>().item && !itemUsed && Input.GetKey(interaction))
                 {
-                    keysOwned = i;
+                    Destroy(gate);
+                    itemUsed = true;
                 }
-            }
-            if (keysOwned >= 0 && Input.GetKey(KeyCode.F))
-            {
-                Destroy(gate);
-                itemsInInventory.Remove(itemsInInventory[keysOwned]);
             }
         }
     }
