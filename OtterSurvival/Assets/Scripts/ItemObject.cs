@@ -5,9 +5,16 @@ public class ItemObject : ScriptableObject
 {
     public enum ItemType
     {
-        Null,  
-        Gate,
-        Key
+        Null,
+        RedKey,
+        RustyKey,
+        KeyBlackout,
+        KeyOrange,
+        Scissors,
+        KeyBase,
+        Wrench,
+        KeyYellow,
+        Axe
     }
 
     public ItemType type;
