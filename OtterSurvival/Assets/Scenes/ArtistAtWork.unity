@@ -1327,6 +1327,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLR-Otter
       objectReference: {fileID: 0}
+    - target: {fileID: 489774524044802757, guid: 87cb944804453554f95b95ae6b00978a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1249412381890968386, guid: 87cb944804453554f95b95ae6b00978a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1574,7 +1579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &340369753
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5396,7 +5401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1133395837
 Transform:
   m_ObjectHideFlags: 0
@@ -7003,7 +7008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1420241585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7278,7 +7283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1429866694
 Transform:
   m_ObjectHideFlags: 0
@@ -7431,7 +7436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1441671317
 Transform:
   m_ObjectHideFlags: 0
