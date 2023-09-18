@@ -3,9 +3,9 @@ using UnityEngine.Playables;
 
 public class PipeScript : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] [Tooltip("Apply the animation of a pipe closing. Leaving it empty will skip the animation entirely")]
     private PlayableDirector pipeCloseAnimation;
-    [SerializeField]
+    [SerializeField] [Tooltip("Remove the objects in this array once the pipe closes")]
     private GameObject[] removeableSludge;
 
     [HideInInspector]
@@ -15,20 +15,30 @@ public class PipeScript : MonoBehaviour
     void Update()
     {
         // Checks if conditions are met
-        if (conditionsMet && pipeCloseAnimation != null) PipeClose();
+        if (conditionsMet) PipeClose();
     }
 
     private void PipeClose()
     {
-        // Checks if the pipe closing animation has been played
-        if (firstPlay)
+        if (pipeCloseAnimation != null)
         {
-            pipeCloseAnimation.Play();
-            firstPlay = false;
-        }
+            // Checks if the pipe closing animation has been played
+            if (firstPlay)
+            {
+                pipeCloseAnimation.Play();
+                firstPlay = false;
+            }
 
-        // Removes object(s) after pipe closing has finished playing 
-        if (pipeCloseAnimation.state != PlayState.Playing && !firstPlay)
+            // Removes object(s) after pipe closing has finished playing 
+            if (pipeCloseAnimation.state != PlayState.Playing && !firstPlay)
+            {
+                if (removeableSludge != null)
+                {
+                    foreach (GameObject removeableObject in removeableSludge) Destroy(removeableObject);
+                }
+            }
+        }
+        else
         {
             if (removeableSludge != null)
             {

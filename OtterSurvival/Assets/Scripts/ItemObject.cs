@@ -17,5 +17,6 @@ public class ItemObject : ScriptableObject
         Axe
     }
 
+    [Tooltip("Set the item")]
     public ItemType type;
 }
