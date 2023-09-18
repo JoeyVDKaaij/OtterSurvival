@@ -8,31 +8,36 @@ public class MovementController : MonoBehaviour
     private float rightAxis;
     private float upAxis;
     private float airSlowdownMultiplier;
-    [SerializeField]
+    private float airSlowdownStandard = 1;
+
+    [Header("Movements")]
+    [SerializeField, Tooltip("How fast the player can move in units")]
     private float movementVelocityMultiplier = 5;
 
-
-    private float airSlowdownStandard = 1;
-    [SerializeField]
+    [SerializeField, Tooltip("How much the player gets slown down")]
     private float airSlowdown = 0.5f;
-
-    [SerializeField]
-    private Animator animator;
 
     Vector2 rotation;
     Vector2 currentRotation;
-    [SerializeField]
+    [Header("Rotations")]
+    [SerializeField, Tooltip("Mouse Sensitivity")]
     private float sensitivity = 2.0f;
-    [SerializeField]
+    [SerializeField, Tooltip("How far the rotation can reach in the Y axis")]
     private float minYRotation = -90f;
-    [SerializeField]
+    [SerializeField, Tooltip("How far the rotation can reach in the Y axis")]
     private float maxYRotation = 90f;
 
     private Rigidbody rb;
 
+    [HideInInspector]
     public bool gameOver = false;
 
-    public GameObject Bubbles;
+    [Header("Sprite and Animations")]
+    [SerializeField, Tooltip("The sprite of bubbles")]
+    private GameObject Bubbles;
+    [SerializeField, Tooltip ("Animation of bubbles")]
+    private Animator bubblesAnimator;
+
     Billboard script;
 
     // Initiate variables
@@ -84,7 +89,7 @@ public class MovementController : MonoBehaviour
             rotation.y = -Input.GetAxis("Mouse Y");
 
             // Set animation
-            animator.SetFloat("Speed", forwardAxis);
+            bubblesAnimator.SetFloat("Speed", forwardAxis);
 
             // Apply sensitivity
             rotation *= sensitivity;

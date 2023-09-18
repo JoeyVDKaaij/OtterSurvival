@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class AirController : MonoBehaviour
 {
-    [SerializeField]
+    [Header("Hud Elements")]
+    [SerializeField, Tooltip("The slider")]
     private Slider slider;
-    [SerializeField]
+
+    [Header("Air Variables")]
+    [SerializeField, Tooltip("How long the player can breathe")]
     private float maxAirTime = 100;
-    [SerializeField]
+    [SerializeField, Tooltip("How fast the amount of air is decreasing")]
     private float decreaseAirSpeed = 5;
-    [SerializeField]
+    [SerializeField, Tooltip("How fast the amount of air is increasing")]
     private float increaseAirSpeed = 10;
     private float air;
 

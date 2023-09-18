@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class OtterCageScript : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Tooltip("Set the pipe that gets affected by the unlocking of the cage")]
     private GameObject affectedPipe;
 
-    // Apply the object 
+    [Tooltip("The item that is needed to open the cage")]
     public ItemObject item;
 
     public void GateOpen()

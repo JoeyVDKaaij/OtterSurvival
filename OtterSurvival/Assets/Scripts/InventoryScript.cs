@@ -3,12 +3,39 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
+    private enum mouseButton
+    {
+        left,
+        right, 
+        middle
+    }
+
     private List<ItemObject> itemsInInventory = new List<ItemObject>();
-    [SerializeField]
+    [Header("Item Oriented Variables")]
+    [SerializeField, Tooltip("The distance that the player can grab from")]
     private float maxGrabDistance = 1.1f;
 
-    [SerializeField]
+    [Header("Interactions")]
+    [SerializeField, Tooltip("The button for interacting with the item")]
     private KeyCode interaction = KeyCode.F;
+    [SerializeField, Tooltip("The mouse button for interacting with the item")]
+    private mouseButton interactionMouse = mouseButton.left;
+    private int mouseButtonN;
+
+    private void Start()
+    {
+        switch (interactionMouse)
+        {
+            case mouseButton.left:
+                mouseButtonN = 0; break;
+
+            case mouseButton.right:
+                mouseButtonN = 1; break;
+
+            case mouseButton.middle:
+                mouseButtonN = 2; break;
+        }
+    }
 
     #region RayCast and Hits
 
@@ -38,7 +65,7 @@ public class InventoryScript : MonoBehaviour
                 foreach (ItemObject item in itemsInInventory)
                 {
                     // Checks if you have the right key and open the gate
-                    if (item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction))
+                    if (item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction) || item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetMouseButton(mouseButtonN))
                     {
                         hitItem.GetComponent<OtterCageScript>().GateOpen();
                         itemUsed = true;
