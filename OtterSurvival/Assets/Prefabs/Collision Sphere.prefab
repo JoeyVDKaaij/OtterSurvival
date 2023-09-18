@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8463510414797052612}
   m_Layer: 0
   m_Name: Collision Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,14 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f8c60769ca71242bd0b881527b2384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVelocityMultiplier: 20
+  movementVelocityMultiplier: 15
   airSlowdown: 0.5
-  animator: {fileID: 3007218032643366534}
   sensitivity: 2
   minYRotation: -55
   maxYRotation: 55
   gameOver: 0
   Bubbles: {fileID: 1072669691984786304}
+  bubblesAnimator: {fileID: 3007218032643366534}
 --- !u!114 &5030851023937943503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0, y: 0, z: 0}
-  ShoulderOffset: {x: 0.5, y: 0, z: 0}
+  ShoulderOffset: {x: 0, y: 0, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
   CameraDistance: 2
@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 3996907999954457073}
   - component: {fileID: 4081949290508477410}
   - component: {fileID: 6004168167621016453}
+  - component: {fileID: 3231580283974758234}
   m_Layer: 0
   m_Name: 3rd person VCam
   m_TagString: Untagged
@@ -588,8 +589,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7ea2d20ae2ef841ac90e49c939e3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxGrabDistance: 1.1
+  maxGrabDistance: 5
   interaction: 102
+  interactionMouse: 0
+--- !u!114 &3231580283974758234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404202743549910881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 15
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7068e01df471b90499b6c29ab13ded80, type: 2}
 --- !u!1001 &6008747939130496924
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,6 +2,6 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
-    // Apply the object 
+    [Tooltip("Set the item to the object")]
     public ItemObject item;
 }
