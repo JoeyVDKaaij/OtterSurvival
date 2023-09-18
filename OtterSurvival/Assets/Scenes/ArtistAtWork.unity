@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1025,9 +1025,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &207595841
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 05308d4dddb6f024683b2b56d913fa22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1688677716}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -1041,9 +1041,9 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &207595842
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05308d4dddb6f024683b2b56d913fa22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1688677716}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207595841}
   serializedVersion: 2
@@ -1422,6 +1422,11 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 547681326}
+    - target: {fileID: 5030851023937943503, guid: 87cb944804453554f95b95ae6b00978a,
+        type: 3}
+      propertyPath: decreaseAirSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1609,7 +1614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &340369753
 MeshRenderer:
   m_ObjectHideFlags: 0
