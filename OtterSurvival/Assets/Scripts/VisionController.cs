@@ -49,7 +49,7 @@ public class VisionController : MonoBehaviour
     {
         if (xRotation)
         {
-            currentXAngle = Mathf.Lerp(minXAngle, maxXAngle, Time.deltaTime * xRotationSpeed);
+            currentXAngle = Mathf.Lerp(minXAngle, maxXAngle, Mathf.PingPong(Time.time * xRotationSpeed, 1.0f));
         }
         if (yRotation)
         {
