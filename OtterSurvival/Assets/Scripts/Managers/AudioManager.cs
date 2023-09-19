@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -58,12 +56,12 @@ public class AudioManager : MonoBehaviour
     }
 
     // Play a sound effect
-    public void PlaySoundEffect(GameObject audioObject, AudioClip clip)
+    public void PlaySoundEffect(GameObject audioObject, AudioClip clip, float volume)
     {
         // Create an AudioSource for the sound effect
         AudioSource source = audioObject.AddComponent<AudioSource>();
         source.clip = clip;
-        source.volume = mainVolume * sFXVolume;
+        source.volume = mainVolume * sFXVolume * volume;
         source.Play();
 
         // Destroy the AudioSource after the sound has finished playing
@@ -71,14 +69,18 @@ public class AudioManager : MonoBehaviour
     }
 
     // Play a sound effect when the same sound effect doesn't play
-    public void PlaySoundEffectWhenSilent(GameObject audioObject, AudioSource source)
+    public void PlaySoundEffectWhenSilent(AudioSource source, float volume)
     {
+        volume = Mathf.Clamp(volume, 0f, 1f);
         // Checks if the audiosource is playing
-        if (!source.isPlaying)
+        if (source.clip != null)
         {
-            // Set the volume and play the sound effect
-            source.volume = mainVolume * sFXVolume;
-            source.Play();
+            if (!source.isPlaying)
+            {
+                // Set the volume and play the sound effect
+                source.volume = mainVolume * sFXVolume * volume;
+                source.Play();
+            }
         }
     }
 }

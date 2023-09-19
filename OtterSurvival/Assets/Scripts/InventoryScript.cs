@@ -31,10 +31,16 @@ public class InventoryScript : MonoBehaviour
     [Header("Audio")]
     [SerializeField, Tooltip("Sound effect clip for picking something up")]
     private AudioClip pickUp = null;
+    [SerializeField, Tooltip("The volume of the pick up sound effect from 0 to 1"), Range(0f, 1f)]
+    private float pickUpVolume = 1f;
     [SerializeField, Tooltip("Sound effect clip for using an item")]
     private AudioClip openGate = null;
+    [SerializeField, Tooltip("The volume of the pick up openGate from 0 to 1"), Range(0f, 1f)]
+    private float openGateVolume = 1f;
     [SerializeField, Tooltip("Sound effect clip for using an item")]
     private AudioClip openCage = null;
+    [SerializeField, Tooltip("The volume of the pick up open cage from 0 to 1"), Range(0f, 1f)]
+    private float openCageVolume = 1f;
 
     private void Start()
     {
@@ -94,7 +100,7 @@ public class InventoryScript : MonoBehaviour
             bubblesAnimator.SetBool("IsInteracting", true);
             Destroy(key);
             if (pickUp != null)
-                AudioManager.Instance.PlaySoundEffect(gameObject, pickUp);
+                AudioManager.Instance.PlaySoundEffect(gameObject, pickUp, pickUpVolume);
         }
     }
 
@@ -112,7 +118,7 @@ public class InventoryScript : MonoBehaviour
                     Destroy(gate);
                     itemUsed = true;
                     if (openGate != null)
-                        AudioManager.Instance.PlaySoundEffect(gameObject, openGate);
+                        AudioManager.Instance.PlaySoundEffect(gameObject, openGate, openGateVolume);
                 }
             }
         }
@@ -130,7 +136,7 @@ public class InventoryScript : MonoBehaviour
                 bubblesAnimator.SetBool("IsInteracting", true);
                 itemUsed = true;
                 if (openCage != null)
-                    AudioManager.Instance.PlaySoundEffect(gameObject, openCage);
+                    AudioManager.Instance.PlaySoundEffect(gameObject, openCage, openCageVolume);
             }
         }
     }
