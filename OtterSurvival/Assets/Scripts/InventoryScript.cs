@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -27,6 +28,22 @@ public class InventoryScript : MonoBehaviour
     [SerializeField, Tooltip("The mouse button for interacting with the item")]
     private mouseButton interactionMouse = mouseButton.left;
     private int mouseButtonN;
+
+    [Header("Audio")]
+    private List<AudioClip> itemSoundEffects = new List<AudioClip>();
+    private List<float> itemVolumes = new List<float>();
+    [SerializeField, Tooltip("Sound effect clip for using an item")]
+    private AudioClip pickUp = null;
+    [SerializeField, Tooltip("The volume of the pick up openGate from 0 to 1"), Range(0f, 1f)]
+    private float pickUpVolume = 1f;
+    [SerializeField, Tooltip("Sound effect clip for using an item")]
+    private AudioClip openGate = null;
+    [SerializeField, Tooltip("The volume of the pick up openGate from 0 to 1"), Range(0f, 1f)]
+    private float openGateVolume = 1f;
+    [SerializeField, Tooltip("Sound effect clip for using an item")]
+    private AudioClip openCage = null;
+    [SerializeField, Tooltip("The volume of the pick up open cage from 0 to 1"), Range(0f, 1f)]
+    private float openCageVolume = 1f;
 
     private void Start()
     {
@@ -67,17 +84,7 @@ public class InventoryScript : MonoBehaviour
             }
             if (hitItem.CompareTag("Cage"))
             {
-                bool itemUsed = false;
-                foreach (ItemObject item in itemsInInventory)
-                {
-                    // Checks if you have the right key and open the gate
-                    if (item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction) || item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetMouseButton(mouseButtonN))
-                    {
-                        hitItem.GetComponent<OtterCageScript>().GateOpen();
-                        bubblesAnimator.SetBool("IsInteracting",true);
-                        itemUsed = true;
-                    }
-                }
+                OpenCage(hitItem);
             }
         }
     }
@@ -93,7 +100,11 @@ public class InventoryScript : MonoBehaviour
         {
             // Add key to list and remove key object ingame
             itemsInInventory.Add(key.GetComponent<ItemScript>().item);
-            bubblesAnimator.SetBool("IsInteracting",true);
+            bubblesAnimator.SetBool("IsInteracting", true);
+            itemSoundEffects.Add(key.GetComponent<ItemScript>().itemSoundEffect);
+            itemVolumes.Add(key.GetComponent<ItemScript>().itemVolume);
+            if (pickUp != null)
+                AudioManager.Instance.PlaySoundEffect(gameObject, pickUp, pickUpVolume);
             Destroy(key);
         }
     }
@@ -105,13 +116,42 @@ public class InventoryScript : MonoBehaviour
         if (itemsInInventory.Count > 0)
         {
             bool itemUsed = false;
+            int itemId = 0;
             foreach (ItemObject item in itemsInInventory)
             {
                 if (item == gate.GetComponent<ItemScript>().item && !itemUsed && Input.GetKey(interaction))
                 {
                     Destroy(gate);
                     itemUsed = true;
+                    if (openGate != null && itemSoundEffects[itemId] == null)
+                        AudioManager.Instance.PlaySoundEffect(gameObject, openGate, openGateVolume);
+                    else
+                        AudioManager.Instance.PlaySoundEffect(gameObject, itemSoundEffects[itemId], itemVolumes[itemId]);
                 }
+
+                itemId++;
+            }
+        }
+    }
+
+    private void OpenCage(GameObject cage) 
+    {
+        bool itemUsed = false;
+        int itemId = 0;
+        foreach (ItemObject item in itemsInInventory)
+        {
+            // Checks if you have the right key and open the gate
+            if (item == cage.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction) || item == cage.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetMouseButton(mouseButtonN))
+            {
+                cage.GetComponent<OtterCageScript>().GateOpen();
+                bubblesAnimator.SetBool("IsInteracting", true);
+                itemUsed = true;
+                if (openCage != null && itemSoundEffects[itemId] == null)
+                    AudioManager.Instance.PlaySoundEffect(gameObject, openCage, openCageVolume);
+                else
+                    AudioManager.Instance.PlaySoundEffect(gameObject, itemSoundEffects[itemId], itemVolumes[itemId]);
+            
+                itemId++;
             }
         }
     }

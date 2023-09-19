@@ -40,6 +40,20 @@ public class MovementController : MonoBehaviour
 
     Billboard script;
 
+    [Header("Audio")]
+    [SerializeField, Tooltip("Sound effect source for picking something up")]
+    private AudioSource movementAudioSource = null;
+    [SerializeField, Tooltip("The volume of the pick up sound effect from 0 to 1"), Range(0f, 1f)]
+    private float movementVolume = 1f;
+    [SerializeField, Tooltip("Sound effect clip for the player diving into the water")]
+    private AudioClip diveClip = null;
+    [SerializeField, Tooltip("The volume of the player diving into the water sound effect from 0 to 1"), Range(0f, 1f)]
+    private float diveVolume = 1f;
+    [SerializeField, Tooltip("Sound effect clip for the player getting above water")]
+    private AudioClip aboveWaterClip = null;
+    [SerializeField, Tooltip("The volume of the player getting above water from 0 to 1"), Range(0f, 1f)]
+    private float aboveWaterVolume = 1f;
+
     // Initiate variables
     void Start()
     {
@@ -55,15 +69,21 @@ public class MovementController : MonoBehaviour
 
     #region Movements
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Sky"))
+        {
+            AudioManager.Instance.PlaySoundEffect(gameObject, aboveWaterClip, aboveWaterVolume);
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         // Set movement speed above water vs under water
         if (collision.collider.CompareTag("Sky"))
         {
             airSlowdownMultiplier = airSlowdown; 
-            
         }
-
     }
 
     private void OnCollisionExit(Collision collision)
@@ -71,6 +91,7 @@ public class MovementController : MonoBehaviour
         if (collision.collider.CompareTag("Sky"))
         {
             airSlowdownMultiplier = airSlowdownStandard;
+            AudioManager.Instance.PlaySoundEffect(gameObject, diveClip, diveVolume);
         }
             
     }
@@ -113,6 +134,7 @@ public class MovementController : MonoBehaviour
             rb.AddForce(transform.forward * movementVelocityMultiplier * airSlowdownMultiplier * forwardAxis);
             rb.AddForce(transform.right * movementVelocityMultiplier * airSlowdownMultiplier * rightAxis);
             rb.AddForce(transform.up * movementVelocityMultiplier * airSlowdownMultiplier * upAxis);
+            if (forwardAxis != 0 && rightAxis != 0 && upAxis != 0 && movementAudioSource != null) AudioManager.Instance.PlaySoundEffectWhenSilent(movementAudioSource, movementVolume); 
         }
         if (gameOver)
         {
