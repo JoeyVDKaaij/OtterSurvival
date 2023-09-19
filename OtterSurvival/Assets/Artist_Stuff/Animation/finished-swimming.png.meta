@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82ac9da47ce53624abd3a39e23a44e9c
+guid: 3735d200fe4ea664ebde629a3fbe45cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 1500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: swimming-spritesheet_0
+      name: finished-swimming_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 428
-        width: 235.25
-        height: 214
+        y: 2000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4862ba9da604344390a2e514004cc5b
-      internalID: -1174661096
+      spriteID: ff6db8d3a9e7c6344b3fa1ac7e4705e9
+      internalID: 737862410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_1
+      name: finished-swimming_1
       rect:
         serializedVersion: 2
-        x: 235
-        y: 428
-        width: 235.25
-        height: 214
+        x: 1100
+        y: 2000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84c5b9621152dbc46999558f75ef51dc
-      internalID: 584422656
+      spriteID: 0afd9131a9ccbd042b3d019fcd8cd836
+      internalID: -764413668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_2
+      name: finished-swimming_2
       rect:
         serializedVersion: 2
-        x: 470
-        y: 428
-        width: 235.25
-        height: 214
+        x: 2200
+        y: 2000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e2a46ebea4344141b57f19489e777a6
-      internalID: -1290338120
+      spriteID: e34a4708f08d0e1489b5ba8cce5ac734
+      internalID: 1925304773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_3
+      name: finished-swimming_3
       rect:
         serializedVersion: 2
-        x: 705
-        y: 428
-        width: 235.25
-        height: 214
+        x: 3300
+        y: 2000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17c7427389ea57048a68057df7f1b558
-      internalID: 803852362
+      spriteID: f25e91261dcece84381647367b7886d3
+      internalID: -438814910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_4
+      name: finished-swimming_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 214
-        width: 235.25
-        height: 214
+        y: 1000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a034fbe5963325041aea450fb42b85cb
-      internalID: -750283715
+      spriteID: 865cc1024bdebbd4aa9283aa7ac09e26
+      internalID: 415150729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_5
+      name: finished-swimming_5
       rect:
         serializedVersion: 2
-        x: 235
-        y: 214
-        width: 235.25
-        height: 214
+        x: 1100
+        y: 1000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 344d249ce76e6994db35dab3ed01c9f6
-      internalID: 792056134
+      spriteID: 2b1bee9d811863b46a00c13753904763
+      internalID: 1875111401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_6
+      name: finished-swimming_6
       rect:
         serializedVersion: 2
-        x: 470
-        y: 214
-        width: 235.25
-        height: 214
+        x: 2200
+        y: 1000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb7d443b1f6d2ae4e803df78d71a011e
-      internalID: -1650974555
+      spriteID: dfa0a63d066eb43428d1c1efbd13b779
+      internalID: 897559264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_7
+      name: finished-swimming_7
       rect:
         serializedVersion: 2
-        x: 705
-        y: 214
-        width: 235.25
-        height: 214
+        x: 3300
+        y: 1000
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ae3b6c0d8fca7847933715e7fbffd77
-      internalID: 1394575138
+      spriteID: fbca76fd27803f94ca96ce65cca5b44a
+      internalID: -1926311519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swimming-spritesheet_8
+      name: finished-swimming_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 235.25
-        height: 214
+        width: 1100
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,8 +318,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6be10048f293398448681f58677c4f11
-      internalID: 1422725875
+      spriteID: d12e20a861f967d45b98bd89217c5e6d
+      internalID: 1957703436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: finished-swimming_9
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 1100
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15e5d1285234a640a73770139b1db30
+      internalID: 1097902266
       vertices: []
       indices: 
       edges: []
@@ -327,7 +348,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: aead6949aaa4eab46b6c5e984d8d2f94
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      swimming-spritesheet_0: -1174661096
-      swimming-spritesheet_1: 584422656
-      swimming-spritesheet_2: -1290338120
-      swimming-spritesheet_3: 803852362
-      swimming-spritesheet_4: -750283715
-      swimming-spritesheet_5: 792056134
-      swimming-spritesheet_6: -1650974555
-      swimming-spritesheet_7: 1394575138
-      swimming-spritesheet_8: 1422725875
+      finished-swimming_0: 737862410
+      finished-swimming_1: -764413668
+      finished-swimming_2: 1925304773
+      finished-swimming_3: -438814910
+      finished-swimming_4: 415150729
+      finished-swimming_5: 1875111401
+      finished-swimming_6: 897559264
+      finished-swimming_7: -1926311519
+      finished-swimming_8: 1957703436
+      finished-swimming_9: 1097902266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

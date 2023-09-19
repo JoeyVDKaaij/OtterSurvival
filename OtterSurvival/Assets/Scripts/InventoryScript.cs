@@ -15,6 +15,12 @@ public class InventoryScript : MonoBehaviour
     [SerializeField, Tooltip("The distance that the player can grab from")]
     private float maxGrabDistance = 1.1f;
 
+    [Header("Sprite and Animations")]
+    [SerializeField, Tooltip("The sprite of bubbles")]
+    private GameObject Bubbles;
+    [SerializeField, Tooltip("Animation of bubbles")]
+    private Animator bubblesAnimator;
+
     [Header("Interactions")]
     [SerializeField, Tooltip("The button for interacting with the item")]
     private KeyCode interaction = KeyCode.F;
@@ -68,12 +74,14 @@ public class InventoryScript : MonoBehaviour
                     if (item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction) || item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetMouseButton(mouseButtonN))
                     {
                         hitItem.GetComponent<OtterCageScript>().GateOpen();
+                        bubblesAnimator.SetBool("IsInteracting", true);
                         itemUsed = true;
                     }
                 }
             }
         }
     }
+
 
     #endregion
 
@@ -85,6 +93,7 @@ public class InventoryScript : MonoBehaviour
         {
             // Add key to list and remove key object ingame
             itemsInInventory.Add(key.GetComponent<ItemScript>().item);
+            bubblesAnimator.SetBool("IsInteracting", true);
             Destroy(key);
         }
     }
