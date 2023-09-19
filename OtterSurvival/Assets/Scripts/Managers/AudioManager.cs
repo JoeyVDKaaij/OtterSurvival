@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // Play a sound effect when the same sound effect doesn't play
-    public void PlaySoundEffectWhenSilent(AudioSource source, float volume)
+    public void PlaySoundEffectWhenSilent(AudioSource source, float volume, AudioClip clip = null)
     {
         volume = Mathf.Clamp(volume, 0f, 1f);
         // Checks if the audiosource is playing
@@ -78,6 +78,16 @@ public class AudioManager : MonoBehaviour
             if (!source.isPlaying)
             {
                 // Set the volume and play the sound effect
+                source.volume = mainVolume * sFXVolume * volume;
+                source.Play();
+            }
+        }
+        else if (clip != null)
+        {
+            if (!source.isPlaying)
+            {
+                // Set the volume and play the sound effect
+                source.clip = clip;
                 source.volume = mainVolume * sFXVolume * volume;
                 source.Play();
             }

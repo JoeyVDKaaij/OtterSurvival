@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -29,9 +30,11 @@ public class InventoryScript : MonoBehaviour
     private int mouseButtonN;
 
     [Header("Audio")]
-    [SerializeField, Tooltip("Sound effect clip for picking something up")]
+    private List<AudioClip> itemSoundEffects = new List<AudioClip>();
+    private List<float> itemVolumes = new List<float>();
+    [SerializeField, Tooltip("Sound effect clip for using an item")]
     private AudioClip pickUp = null;
-    [SerializeField, Tooltip("The volume of the pick up sound effect from 0 to 1"), Range(0f, 1f)]
+    [SerializeField, Tooltip("The volume of the pick up openGate from 0 to 1"), Range(0f, 1f)]
     private float pickUpVolume = 1f;
     [SerializeField, Tooltip("Sound effect clip for using an item")]
     private AudioClip openGate = null;
@@ -98,9 +101,11 @@ public class InventoryScript : MonoBehaviour
             // Add key to list and remove key object ingame
             itemsInInventory.Add(key.GetComponent<ItemScript>().item);
             bubblesAnimator.SetBool("IsInteracting", true);
-            Destroy(key);
+            itemSoundEffects.Add(key.GetComponent<ItemScript>().itemSoundEffect);
+            itemVolumes.Add(key.GetComponent<ItemScript>().itemVolume);
             if (pickUp != null)
                 AudioManager.Instance.PlaySoundEffect(gameObject, pickUp, pickUpVolume);
+            Destroy(key);
         }
     }
 
@@ -111,15 +116,20 @@ public class InventoryScript : MonoBehaviour
         if (itemsInInventory.Count > 0)
         {
             bool itemUsed = false;
+            int itemId = 0;
             foreach (ItemObject item in itemsInInventory)
             {
                 if (item == gate.GetComponent<ItemScript>().item && !itemUsed && Input.GetKey(interaction))
                 {
                     Destroy(gate);
                     itemUsed = true;
-                    if (openGate != null)
+                    if (openGate != null && itemSoundEffects[itemId] == null)
                         AudioManager.Instance.PlaySoundEffect(gameObject, openGate, openGateVolume);
+                    else
+                        AudioManager.Instance.PlaySoundEffect(gameObject, itemSoundEffects[itemId], itemVolumes[itemId]);
                 }
+
+                itemId++;
             }
         }
     }
@@ -127,6 +137,7 @@ public class InventoryScript : MonoBehaviour
     private void OpenCage(GameObject cage) 
     {
         bool itemUsed = false;
+        int itemId = 0;
         foreach (ItemObject item in itemsInInventory)
         {
             // Checks if you have the right key and open the gate
@@ -135,8 +146,12 @@ public class InventoryScript : MonoBehaviour
                 cage.GetComponent<OtterCageScript>().GateOpen();
                 bubblesAnimator.SetBool("IsInteracting", true);
                 itemUsed = true;
-                if (openCage != null)
+                if (openCage != null && itemSoundEffects[itemId] == null)
                     AudioManager.Instance.PlaySoundEffect(gameObject, openCage, openCageVolume);
+                else
+                    AudioManager.Instance.PlaySoundEffect(gameObject, itemSoundEffects[itemId], itemVolumes[itemId]);
+            
+                itemId++;
             }
         }
     }
