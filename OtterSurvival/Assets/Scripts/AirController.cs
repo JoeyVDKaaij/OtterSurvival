@@ -28,13 +28,13 @@ public class AirController : MonoBehaviour
     void Start()
     {
         deathAnimation = GetComponent<PlayableDirector>();
+
         volume = GetComponentInChildren<Volume>();
-        if (volume != null)
-        {
-            volume.profile.TryGet(out lowAir);
-        }
+
         air = maxAirTime;
-        slider.maxValue = maxAirTime;
+
+        if (slider != null)
+            slider.maxValue = maxAirTime;
     }
 
     #region Breathing and air meter
@@ -57,20 +57,17 @@ public class AirController : MonoBehaviour
         air -= decreaseAirSpeed;
 
         // Change the slider to adapt to the amount of air
-        slider.value = air;
+        if (slider != null)
+            slider.value = air;
 
         // Game kills you if you don't have any air left
         if (air <= 0) Death();
 
         // Sets the intensity of the vignette
-        if (air <= maxAirTime/2 && lowAir != null)
+        if (volume != null)
         {
-            lowAir.intensity.value = 0.5f - (air / maxAirTime);
-            lowAir.intensity.value = Mathf.Clamp(lowAir.intensity.value, 0, 0.5f);
-        }
-        else if (lowAir != null)
-        {
-            lowAir.intensity.value = 0;
+            volume.weight = 1f - (air / maxAirTime);
+            volume.weight = Mathf.Clamp(volume.weight, 0, 1f);
         }
 
         // If Air goes over the limit return it to maximum value
