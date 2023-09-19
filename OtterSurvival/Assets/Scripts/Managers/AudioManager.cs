@@ -32,16 +32,6 @@ public class AudioManager : MonoBehaviour
     }
 
     [Header("Sounds")]
-    [SerializeField, Tooltip("Sound that plays when you pick something up")]
-    private AudioClip pickUp = null;
-    [SerializeField, Tooltip("Sound that plays when you use something")]
-    private AudioClip use = null;
-    [SerializeField, Tooltip("Sound that plays when you take damage")]
-    private AudioClip damage = null;
-    [SerializeField, Tooltip("Sound that plays when you die")]
-    private AudioClip death = null;
-    [SerializeField, Tooltip("Sound that plays when you are swimming")]
-    private AudioClip swimming = null;
     [SerializeField, Tooltip("Music that plays in the background")]
     private AudioClip music = null;
 
@@ -77,7 +67,7 @@ public class AudioManager : MonoBehaviour
         source.Play();
 
         // Destroy the AudioSource after the sound has finished playing
-        Destroy(source, pickUp.length);
+        Destroy(source, clip.length);
     }
 
     // Play a sound effect when the same sound effect doesn't play
