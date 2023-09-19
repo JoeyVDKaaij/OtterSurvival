@@ -11,6 +11,10 @@ public class VisionController : MonoBehaviour
     private bool yRotation = false;
     [SerializeField, Tooltip("Check if this GameObject can rotate along the Z angle")]
     private bool zRotation = false;
+    [SerializeField, Tooltip("Check if this GameObject should rotation is continues")]
+    private bool continuesRotation = false;
+    [SerializeField, Tooltip("Check if this GameObject should rotation is continues in reverse")]
+    private bool continuesReverseRotation = false;
 
     [Header("Angles")]
     [SerializeField, Tooltip("X angle cannot be less than this amount")]
@@ -40,12 +44,33 @@ public class VisionController : MonoBehaviour
 
     private void Start()
     {
-        currentXAngle = transform.rotation.x;
-        currentYAngle = transform.rotation.y;
+        currentXAngle = transform.localRotation.x;
+        Debug.Log(currentXAngle);
+        currentYAngle = transform.localRotation.y;
         currentZAngle = transform.rotation.z;
     }
 
     private void Update()
+    {
+        if (!continuesRotation && !continuesReverseRotation)
+        {
+            NonContinues();
+        }
+        else if (continuesReverseRotation)
+        {
+            ReverseContinues();
+        }
+        else
+        {
+            Continues();
+        }
+
+        transform.rotation = Quaternion.Euler(currentXAngle, currentYAngle, currentZAngle);
+        
+        
+    }
+
+    private void NonContinues()
     {
         if (xRotation)
         {
@@ -59,7 +84,62 @@ public class VisionController : MonoBehaviour
         {
             currentZAngle = Mathf.Lerp(minZAngle, maxZAngle, Mathf.PingPong(Time.time * zRotationSpeed, 1.0f));
         }
+    }
 
-        transform.rotation = Quaternion.Euler(currentXAngle, currentYAngle, currentZAngle);
+    private void Continues()
+    {
+
+        if (xRotation)
+        {
+            currentXAngle += xRotationSpeed;
+            if (currentXAngle >= 360)
+            {
+                currentXAngle = 0 + (currentXAngle - 360);
+            }
+        }
+        if (yRotation)
+        {
+            currentYAngle += yRotationSpeed;
+            if (currentYAngle >= 360)
+            {
+                currentYAngle = 0 + (currentYAngle - 360);
+            }
+        }
+        if (zRotation)
+        {
+            currentZAngle += zRotationSpeed;
+            if (currentZAngle >= 360)
+            {
+                currentZAngle = 0 + (currentZAngle - 360);
+            }
+        }
+    }
+
+    private void ReverseContinues()
+    {
+        if (xRotation)
+        {
+            currentXAngle -= xRotationSpeed;
+            if (currentXAngle <= 0)
+            {
+                currentXAngle = 360 + currentXAngle;
+            }
+        }
+        if (yRotation)
+        {
+            currentYAngle -= yRotationSpeed;
+            if (currentYAngle <= 0)
+            {
+                currentYAngle = 360 + currentYAngle;
+            }
+        }
+        if (zRotation)
+        {
+            currentZAngle -= zRotationSpeed;
+            if (currentZAngle <= 0)
+            {
+                currentZAngle = 360 + currentZAngle;
+            }
+        }
     }
 }

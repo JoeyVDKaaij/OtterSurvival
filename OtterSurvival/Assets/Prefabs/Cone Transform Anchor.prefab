@@ -507,6 +507,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addedDecreaseAirTime: 10
+  trashSource: {fileID: 0}
+  trashClip: {fileID: 0}
+  trashVolume: 1
 --- !u!1 &2688390330659381001
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,9 +535,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2688390330659381001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.28432977, y: 0.28061292, z: 0.7918143, w: 0.46199903}
   m_LocalPosition: {x: -1.5474484, y: 2.43, z: 3.9499855}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.81, y: 4.81, z: 4.81}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7082939845571365592}
