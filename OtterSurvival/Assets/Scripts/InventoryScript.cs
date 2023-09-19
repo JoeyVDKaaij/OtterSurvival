@@ -74,7 +74,7 @@ public class InventoryScript : MonoBehaviour
                     if (item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetKey(interaction) || item == hitItem.GetComponent<OtterCageScript>().item && !itemUsed && Input.GetMouseButton(mouseButtonN))
                     {
                         hitItem.GetComponent<OtterCageScript>().GateOpen();
-                        bubblesAnimator.SetBool("IsInteracting", true);
+                        bubblesAnimator.SetBool("IsInteracting",true);
                         itemUsed = true;
                     }
                 }
@@ -93,7 +93,7 @@ public class InventoryScript : MonoBehaviour
         {
             // Add key to list and remove key object ingame
             itemsInInventory.Add(key.GetComponent<ItemScript>().item);
-            bubblesAnimator.SetBool("IsInteracting", true);
+            bubblesAnimator.SetBool("IsInteracting",true);
             Destroy(key);
         }
     }
