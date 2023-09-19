@@ -44,10 +44,11 @@ public class VisionController : MonoBehaviour
 
     private void Start()
     {
-        currentXAngle = transform.localRotation.x;
-        Debug.Log(currentXAngle);
-        currentYAngle = transform.localRotation.y;
-        currentZAngle = transform.rotation.z;
+        Quaternion localRotation = transform.localRotation;
+
+        currentXAngle = localRotation.eulerAngles.x;
+        currentYAngle = localRotation.eulerAngles.y;
+        currentZAngle = localRotation.eulerAngles.z;
     }
 
     private void Update()
@@ -65,7 +66,7 @@ public class VisionController : MonoBehaviour
             Continues();
         }
 
-        transform.rotation = Quaternion.Euler(currentXAngle, currentYAngle, currentZAngle);
+        transform.localRotation = Quaternion.Euler(currentXAngle, currentYAngle, currentZAngle);
         
         
     }

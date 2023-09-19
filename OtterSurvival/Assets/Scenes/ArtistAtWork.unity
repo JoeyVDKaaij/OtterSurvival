@@ -6655,6 +6655,8 @@ MonoBehaviour:
   pipeCloseAnimation: {fileID: 0}
   removeableSludge:
   - {fileID: 305767177}
+  enemy: {fileID: 0}
+  enemySpawner: []
   conditionsMet: 0
 --- !u!1001 &325895896
 PrefabInstance:
@@ -13317,6 +13319,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 205897582}
   - {fileID: 137239351}
+  enemy: {fileID: 0}
+  enemySpawner: []
   conditionsMet: 0
 --- !u!1001 &805037507
 PrefabInstance:
@@ -15255,6 +15259,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 1403410115}
   - {fileID: 2051377746}
+  enemy: {fileID: 9200165095596087335, guid: 19f68a4da37a4e84b912d45d590850ad, type: 3}
+  enemySpawner: []
   conditionsMet: 0
 --- !u!1001 &1273551960
 PrefabInstance:
@@ -16735,6 +16741,8 @@ MonoBehaviour:
   pipeCloseAnimation: {fileID: 0}
   removeableSludge:
   - {fileID: 1557088693}
+  enemy: {fileID: 0}
+  enemySpawner: []
   conditionsMet: 0
 --- !u!1 &1585833718 stripped
 GameObject:
@@ -16758,6 +16766,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 1404796923}
   - {fileID: 0}
+  enemy: {fileID: 0}
+  enemySpawner: []
   conditionsMet: 0
 --- !u!1 &1586109377
 GameObject:
@@ -18059,6 +18069,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 10941064}
   - {fileID: 705244557}
+  enemy: {fileID: 0}
+  enemySpawner: []
   conditionsMet: 0
 --- !u!4 &1836568270 stripped
 Transform:
