@@ -12,13 +12,13 @@ public class AnimationEdit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StopAnimation("InteractEnded");
     }
 
     // Update is called once per frame
     public void StopAnimation(string message)
     {
-        if (message.Equals("InteracEnded"))
+        if (message.Equals("InteractEnded"))
         {
             bubblesAnimator.SetBool("IsInteracting", false);
         }
