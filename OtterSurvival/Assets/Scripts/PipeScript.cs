@@ -16,6 +16,16 @@ public class PipeScript : MonoBehaviour
     private GameObject enemy = null;
     [SerializeField] [Tooltip("Spawn the enemies at the gameObject location(s)")]
     private GameObject[] enemySpawner = null;
+    [Header("Oil")]
+    [SerializeField]
+    [Tooltip("The oil prefab that is going to spawn")]
+    private GameObject oil = null;
+    [SerializeField] [Tooltip("Spawn the oil at the gameObject location(s)")]
+    private GameObject[] oilSpawner = null;
+    [Tooltip("The big oil prefab that is going to spawn")]
+    private GameObject bigOil = null;
+    [SerializeField] [Tooltip("Spawn the big oil at the gameObject location(s)")]
+    private GameObject[] bigOilSpawner = null;
 
     [HideInInspector]
     public bool conditionsMet;
@@ -55,6 +65,24 @@ public class PipeScript : MonoBehaviour
                         Destroy(spawnableObject);
                     }
                 }
+                if (oilSpawner != null)
+                {
+                    foreach (GameObject spawnableObject in oilSpawner)
+                    { 
+                        if (oil != null) Instantiate(oil, spawnableObject.transform);
+
+                        Destroy(spawnableObject);
+                    }
+                }
+                if (bigOilSpawner != null)
+                {
+                    foreach (GameObject spawnableObject in bigOilSpawner)
+                    {
+                        if (bigOil != null) Instantiate(bigOil, spawnableObject.transform);
+
+                        Destroy(spawnableObject);
+                    }
+                }
             }
         }
         else
@@ -69,6 +97,24 @@ public class PipeScript : MonoBehaviour
                 foreach (GameObject spawnableObject in enemySpawner)
                 {
                     if (enemy != null) Instantiate(enemy, spawnableObject.transform);
+
+                    Destroy(spawnableObject);
+                }
+            }
+            if (oilSpawner != null)
+            {
+                foreach (GameObject spawnableObject in oilSpawner)
+                {
+                    if (oil != null) Instantiate(oil, spawnableObject.transform);
+
+                    Destroy(spawnableObject);
+                }
+            }
+            if (bigOilSpawner != null)
+            {
+                foreach (GameObject spawnableObject in bigOilSpawner)
+                {
+                    if (bigOil != null) Instantiate(bigOil, spawnableObject.transform);
 
                     Destroy(spawnableObject);
                 }
