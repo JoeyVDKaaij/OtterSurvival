@@ -134,7 +134,7 @@ public class MovementController : MonoBehaviour
             rb.AddForce(transform.forward * movementVelocityMultiplier * airSlowdownMultiplier * forwardAxis);
             rb.AddForce(transform.right * movementVelocityMultiplier * airSlowdownMultiplier * rightAxis);
             rb.AddForce(transform.up * movementVelocityMultiplier * airSlowdownMultiplier * upAxis);
-            if (forwardAxis != 0 && rightAxis != 0 && upAxis != 0 && movementAudioSource != null) AudioManager.Instance.PlaySoundEffectWhenSilent(movementAudioSource, movementVolume); 
+            if (forwardAxis != 0 || rightAxis != 0 || upAxis != 0 && movementAudioSource != null) AudioManager.Instance.PlaySoundEffectWhenSilent(movementAudioSource, movementVolume); 
         }
         if (gameOver)
         {
