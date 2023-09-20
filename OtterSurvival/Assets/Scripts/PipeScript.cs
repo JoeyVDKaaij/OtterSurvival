@@ -22,7 +22,7 @@ public class PipeScript : MonoBehaviour
     private GameObject oil = null;
     [SerializeField] [Tooltip("Spawn the oil at the gameObject location(s)")]
     private GameObject[] oilSpawner = null;
-    [Tooltip("The big oil prefab that is going to spawn")]
+    [SerializeField] [Tooltip("The big oil prefab that is going to spawn")]
     private GameObject bigOil = null;
     [SerializeField] [Tooltip("Spawn the big oil at the gameObject location(s)")]
     private GameObject[] bigOilSpawner = null;
