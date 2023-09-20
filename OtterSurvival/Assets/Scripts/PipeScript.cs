@@ -49,7 +49,7 @@ public class PipeScript : MonoBehaviour
             }
 
             // Removes object(s) after pipe closing has finished playing 
-            if (pipeCloseAnimation.state != PlayState.Playing && !firstPlay)
+            if (pipeCloseAnimation.isPlaying && !firstPlay)
             {
                 if (removeableSludge != null)
                 {
