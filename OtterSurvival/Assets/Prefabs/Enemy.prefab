@@ -40,6 +40,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
+      propertyPath: xRotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: yRotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: zRotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
       propertyPath: continuesRotation
       value: 1
       objectReference: {fileID: 0}
@@ -47,6 +62,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cone Transform Anchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.4680066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.4680066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 23.967916
       objectReference: {fileID: 0}
     - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
@@ -78,10 +108,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 846
       objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7659374576555672840, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
       propertyPath: addedDecreaseAirTime
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -144,6 +179,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
+      propertyPath: xRotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: yRotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: zRotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
       propertyPath: continuesRotation
       value: 1
       objectReference: {fileID: 0}
@@ -151,6 +201,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cone Transform Anchor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.340542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.340542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17.76303
       objectReference: {fileID: 0}
     - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
@@ -202,10 +267,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 846
       objectReference: {fileID: 0}
+    - target: {fileID: 6040333411114345275, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7659374576555672840, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
       propertyPath: addedDecreaseAirTime
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9049599365988480046, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
@@ -234,17 +304,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 50b8b02c6a7e984469f00d2bfa50bd19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.3196173
+      value: 282.49854
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b8b02c6a7e984469f00d2bfa50bd19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.57
+      value: 56.83287
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b8b02c6a7e984469f00d2bfa50bd19,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.0799327
+      value: 337.38922
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b8b02c6a7e984469f00d2bfa50bd19,
         type: 3}
