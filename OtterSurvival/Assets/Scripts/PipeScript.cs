@@ -6,7 +6,7 @@ public class PipeScript : MonoBehaviour
 {
     [Header("Animations")]
     [SerializeField] [Tooltip("Apply the animation of a pipe closing. Leaving it empty will skip the animation entirely")]
-    private PlayableDirector pipeCloseAnimation;
+    private Animation pipeCloseAnimation;
     [Header("Sludge")]
     [SerializeField] [Tooltip("Remove the objects in this array once the pipe closes")]
     private GameObject[] removeableSludge;
