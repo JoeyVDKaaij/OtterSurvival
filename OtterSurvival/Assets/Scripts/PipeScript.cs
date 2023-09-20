@@ -6,7 +6,7 @@ public class PipeScript : MonoBehaviour
 {
     [Header("Animations")]
     [SerializeField] [Tooltip("Apply the animation of a pipe closing. Leaving it empty will skip the animation entirely")]
-    private Animation pipeCloseAnimation;
+    private Animator pipeCloseAnimation;
     [Header("Sludge")]
     [SerializeField] [Tooltip("Remove the objects in this array once the pipe closes")]
     private GameObject[] removeableSludge;
@@ -42,14 +42,12 @@ public class PipeScript : MonoBehaviour
         if (pipeCloseAnimation != null)
         {
             // Checks if the pipe closing animation has been played
-            if (firstPlay)
-            {
-                pipeCloseAnimation.Play();
-                firstPlay = false;
-            }
+           
+                pipeCloseAnimation.SetBool("Close", true);
+            
 
             // Removes object(s) after pipe closing has finished playing 
-            if (pipeCloseAnimation.isPlaying && !firstPlay)
+            if (pipeCloseAnimation.GetBool("Close"))
             {
                 if (removeableSludge != null)
                 {

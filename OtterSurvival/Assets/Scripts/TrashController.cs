@@ -17,7 +17,12 @@ public class TrashController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (trashSource != null && trashClip != null)
+        {
             AudioManager.Instance.PlaySoundEffectWhenSilent(trashSource, trashVolume, trashClip);
-        if (other.gameObject.CompareTag("Player")) other.gameObject.GetComponent<AirController>().AddedDecreaseAirSpeed(addedDecreaseAirTime);
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<AirController>().AddedDecreaseAirSpeed(addedDecreaseAirTime);
+        }
     }
 }
