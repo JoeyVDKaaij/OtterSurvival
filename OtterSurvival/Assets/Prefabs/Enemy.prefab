@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8423523251438977693}
     m_Modifications:
+    - target: {fileID: 429302514656626030, guid: 76107bb3501ffb748b24f6113c1035f1,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 2852
+      objectReference: {fileID: 0}
     - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
       propertyPath: maxXAngle
@@ -139,13 +144,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 429302514656626030, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 876774457626076871, guid: 76107bb3501ffb748b24f6113c1035f1,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
+      propertyPath: m_VersionIndex
+      value: 2852
       objectReference: {fileID: 0}
     - target: {fileID: 2580590318412901916, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
@@ -277,11 +277,6 @@ PrefabInstance:
       propertyPath: addedDecreaseAirTime
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 9049599365988480046, guid: 76107bb3501ffb748b24f6113c1035f1,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -309,7 +304,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 50b8b02c6a7e984469f00d2bfa50bd19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.83287
+      value: 59.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b8b02c6a7e984469f00d2bfa50bd19,
         type: 3}
