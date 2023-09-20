@@ -2240,6 +2240,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1 &66495825
@@ -27747,6 +27748,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &417186078
@@ -40604,6 +40606,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 221241835650408977, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 221241835650408977, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47c1c677e15faa14883a2a650e5851e3,
+        type: 3}
     - target: {fileID: 1483081007367170053, guid: 5cacd35b4f836d64497ea3e6516c4570,
         type: 3}
       propertyPath: m_text
@@ -40714,16 +40727,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8291250054085640121, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 642cde38f3403664b85935ec88579779,
+        type: 3}
+    - target: {fileID: 8291250054085640121, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291250054085640121, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291250054085640121, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8958851958395027470, guid: 5cacd35b4f836d64497ea3e6516c4570,
         type: 3}
       propertyPath: m_text
       value: Game Over
       objectReference: {fileID: 0}
+    - target: {fileID: 9000801074915595269, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151784929914620878, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 142.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151784929914620878, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7568578224827624890, guid: 5cacd35b4f836d64497ea3e6516c4570, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7707949982938422659, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 841252760}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cacd35b4f836d64497ea3e6516c4570, type: 3}
+--- !u!224 &648321566 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7707949982938422659, guid: 5cacd35b4f836d64497ea3e6516c4570,
+    type: 3}
+  m_PrefabInstance: {fileID: 648321565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &648804786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55631,6 +55691,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 838200921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &841252759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841252760}
+  - component: {fileID: 841252762}
+  - component: {fileID: 841252761}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &841252760
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841252759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 648321566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &841252761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841252759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.29803923}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &841252762
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841252759}
+  m_CullTransparentMesh: 1
 --- !u!1001 &845164426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56552,6 +56687,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &868587084
@@ -57260,6 +57396,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &899827247
@@ -70301,6 +70438,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &1318387855
@@ -78590,6 +78728,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &1618500459
@@ -86643,6 +86782,7 @@ MonoBehaviour:
   enemySpawner: []
   oil: {fileID: 0}
   oilSpawner: []
+  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &1903915008
