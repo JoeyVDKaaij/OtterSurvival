@@ -11,10 +11,22 @@ public class InventoryScript : MonoBehaviour
         middle
     }
 
+
     private List<ItemObject> itemsInInventory = new List<ItemObject>();
     [Header("Item Oriented Variables")]
     [SerializeField, Tooltip("The distance that the player can grab from")]
     private float maxGrabDistance = 1.1f;
+    [SerializeField, Tooltip("All the available items")]
+    private List<ItemObject> availableItems = new List<ItemObject>();
+    [SerializeField, Tooltip("The Keyswitching script")]
+    private KeySwitching keySwitching = null;
+    [SerializeField, Tooltip("The Keyswitching script")]
+    private GameObject axe = null;
+    [SerializeField, Tooltip("The Keyswitching script")]
+    private GameObject scissors = null;
+    [SerializeField, Tooltip("The Keyswitching script")]
+    private GameObject wrench = null;
+
 
     [Header("Sprite and Animations")]
     [SerializeField, Tooltip("The sprite of bubbles")]
@@ -105,6 +117,23 @@ public class InventoryScript : MonoBehaviour
             itemVolumes.Add(key.GetComponent<ItemScript>().itemVolume);
             if (pickUp != null)
                 AudioManager.Instance.PlaySoundEffect(gameObject, pickUp, pickUpVolume);
+            if (key.GetComponent<ItemScript>().item != availableItems[0] && key.GetComponent<ItemScript>().item != availableItems[7] && key.GetComponent<ItemScript>().item != availableItems[8] && keySwitching != null)
+            {
+                keySwitching.NextSprite();
+            }
+            else if (key.GetComponent<ItemScript>().item == availableItems[0] && axe != null)
+            {
+                axe.SetActive(true);
+            }
+            else if (key.GetComponent<ItemScript>().item == availableItems[8] && wrench != null)
+            {
+                wrench.SetActive(true);
+            }
+            else if (key.GetComponent<ItemScript>().item == availableItems[7] && scissors != null)
+            {
+                scissors.SetActive(true);
+            }
+
             Destroy(key);
         }
     }
@@ -121,6 +150,13 @@ public class InventoryScript : MonoBehaviour
             {
                 if (item == gate.GetComponent<ItemScript>().item && !itemUsed && Input.GetKey(interaction))
                 {
+                    if (gate.GetComponent<ItemScript>().item == availableItems[6] && keySwitching != null)
+                    {
+                       keySwitching.NextSprite();
+                    }
+
+                    gate.GetComponent<ItemScript>().ParticlePLay();
+
                     Destroy(gate);
                     itemUsed = true;
                     if (openGate != null && itemSoundEffects[itemId] == null)

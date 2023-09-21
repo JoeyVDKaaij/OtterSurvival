@@ -694,6 +694,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxGrabDistance: 5
+  availableItems:
+  - {fileID: 11400000, guid: 49c65a3475d2a9b409def1908ce44497, type: 2}
+  - {fileID: 11400000, guid: 36f8b187eef669749a9bc2d5b1f47b17, type: 2}
+  - {fileID: 11400000, guid: ee8b0caf85bc1934d9c751d3de551458, type: 2}
+  - {fileID: 11400000, guid: ea5a932b0ef241245b685bd2934a7ab4, type: 2}
+  - {fileID: 11400000, guid: 3669a612627fddb44ac29f00664a1395, type: 2}
+  - {fileID: 11400000, guid: 5772cbfaf8696a748b0fd6813d466dbc, type: 2}
+  - {fileID: 11400000, guid: f7c7d529651d06a49a0428e90617c122, type: 2}
+  - {fileID: 11400000, guid: 238126863f4433d4d99cb31ca35aa938, type: 2}
+  - {fileID: 11400000, guid: d3e9b360aef1a2f46bcb01a513e1cd54, type: 2}
+  keySwitching: {fileID: 0}
   Bubbles: {fileID: 0}
   bubblesAnimator: {fileID: 0}
   interaction: 102

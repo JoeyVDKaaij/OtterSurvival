@@ -11,19 +11,11 @@ public class PipeScript : MonoBehaviour
     [SerializeField] [Tooltip("Remove the objects in this array once the pipe closes")]
     private GameObject[] removeableSludge;
     [Header("Enemy")]
-    [SerializeField]
-    [Tooltip("The Enemy prefab that is going to spawn")]
-    private GameObject enemy = null;
     [SerializeField] [Tooltip("Spawn the enemies at the gameObject location(s)")]
     private GameObject[] enemySpawner = null;
     [Header("Oil")]
-    [SerializeField]
-    [Tooltip("The oil prefab that is going to spawn")]
-    private GameObject oil = null;
     [SerializeField] [Tooltip("Spawn the oil at the gameObject location(s)")]
     private GameObject[] oilSpawner = null;
-    [SerializeField] [Tooltip("The big oil prefab that is going to spawn")]
-    private GameObject bigOil = null;
     [SerializeField] [Tooltip("Spawn the big oil at the gameObject location(s)")]
     private GameObject[] bigOilSpawner = null;
 
@@ -43,7 +35,7 @@ public class PipeScript : MonoBehaviour
         {
             // Checks if the pipe closing animation has been played
            
-                pipeCloseAnimation.SetBool("Close", true);
+            pipeCloseAnimation.SetBool("Close", true);
             
 
             // Removes object(s) after pipe closing has finished playing 
@@ -57,28 +49,21 @@ public class PipeScript : MonoBehaviour
                 if (enemySpawner != null)
                 {
                     foreach (GameObject spawnableObject in enemySpawner)
-                    {
-                        if (enemy != null) Instantiate(enemy, spawnableObject.transform);
+                        spawnableObject.SetActive(true);
 
-                        Destroy(spawnableObject);
-                    }
                 }
                 if (oilSpawner != null)
                 {
                     foreach (GameObject spawnableObject in oilSpawner)
-                    { 
-                        if (oil != null) Instantiate(oil, spawnableObject.transform);
-
-                        Destroy(spawnableObject);
+                    {
+                        spawnableObject.SetActive(true);
                     }
                 }
                 if (bigOilSpawner != null)
                 {
                     foreach (GameObject spawnableObject in bigOilSpawner)
                     {
-                        if (bigOil != null) Instantiate(bigOil, spawnableObject.transform);
-
-                        Destroy(spawnableObject);
+                        spawnableObject.SetActive(true);
                     }
                 }
             }
@@ -94,27 +79,21 @@ public class PipeScript : MonoBehaviour
             {
                 foreach (GameObject spawnableObject in enemySpawner)
                 {
-                    if (enemy != null) Instantiate(enemy, spawnableObject.transform);
-
-                    Destroy(spawnableObject);
+                    spawnableObject.SetActive(true);
                 }
             }
             if (oilSpawner != null)
             {
                 foreach (GameObject spawnableObject in oilSpawner)
                 {
-                    if (oil != null) Instantiate(oil, spawnableObject.transform);
-
-                    Destroy(spawnableObject);
+                    spawnableObject.SetActive(true);
                 }
             }
             if (bigOilSpawner != null)
             {
                 foreach (GameObject spawnableObject in bigOilSpawner)
                 {
-                    if (bigOil != null) Instantiate(bigOil, spawnableObject.transform);
-
-                    Destroy(spawnableObject);
+                    spawnableObject.SetActive(true);
                 }
             }
         }

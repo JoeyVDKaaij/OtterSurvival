@@ -112,8 +112,7 @@ public class AirController : MonoBehaviour
         else
         {
             // Death scene
-            int lastSceneBuildIndex = SceneManager.sceneCountInBuildSettings - 1;
-            SceneManager.LoadScene(lastSceneBuildIndex);
+            SceneManager.LoadScene(3);
         }
     }
 
