@@ -154,6 +154,9 @@ public class InventoryScript : MonoBehaviour
                     {
                        keySwitching.NextSprite();
                     }
+
+                    gate.GetComponent<ItemScript>().ParticlePLay();
+
                     Destroy(gate);
                     itemUsed = true;
                     if (openGate != null && itemSoundEffects[itemId] == null)

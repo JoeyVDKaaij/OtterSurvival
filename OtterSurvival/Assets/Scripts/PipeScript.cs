@@ -35,7 +35,7 @@ public class PipeScript : MonoBehaviour
         {
             // Checks if the pipe closing animation has been played
            
-                pipeCloseAnimation.SetBool("Close", true);
+            pipeCloseAnimation.SetBool("Close", true);
             
 
             // Removes object(s) after pipe closing has finished playing 

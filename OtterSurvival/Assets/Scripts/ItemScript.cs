@@ -8,4 +8,12 @@ public class ItemScript : MonoBehaviour
     public AudioClip itemSoundEffect = null;
     [Tooltip("Set the volume of the sound effect"), Range(0,1)]
     public float itemVolume = 1f;
+
+    [SerializeField, Tooltip("The particle that plays when you interact")]
+    private ParticleSystem particles;
+
+    public void ParticlePLay()
+    {
+        particles.Play();
+    }
 }
