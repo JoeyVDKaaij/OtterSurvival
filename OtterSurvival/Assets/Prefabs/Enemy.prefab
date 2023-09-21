@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 7659374576555672840, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
       propertyPath: addedDecreaseAirTime
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 7659374576555672840, guid: 76107bb3501ffb748b24f6113c1035f1,
         type: 3}
       propertyPath: addedDecreaseAirTime
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
