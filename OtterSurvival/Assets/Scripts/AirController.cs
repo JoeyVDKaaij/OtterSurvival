@@ -112,7 +112,7 @@ public class AirController : MonoBehaviour
         else
         {
             // Death scene
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
 
