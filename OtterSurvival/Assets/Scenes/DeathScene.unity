@@ -678,7 +678,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedPipe: {fileID: 1313803287}
+  otter: {fileID: 0}
   item: {fileID: 11400000, guid: 36f8b187eef669749a9bc2d5b1f47b17, type: 2}
+  particles: {fileID: 0}
 --- !u!65 &17248457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2236,11 +2238,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 1977180203}
   - {fileID: 2139180073}
-  enemy: {fileID: 9200165095596087335, guid: 19f68a4da37a4e84b912d45d590850ad, type: 3}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1 &66495825
@@ -5073,7 +5072,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedPipe: {fileID: 897896652}
+  otter: {fileID: 0}
   item: {fileID: 11400000, guid: 238126863f4433d4d99cb31ca35aa938, type: 2}
+  particles: {fileID: 0}
 --- !u!1001 &130789649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7537,6 +7538,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 238126863f4433d4d99cb31ca35aa938, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!65 &212014147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14973,6 +14975,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 49c65a3475d2a9b409def1908ce44497, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!1 &306071387
 GameObject:
   m_ObjectHideFlags: 0
@@ -27744,11 +27747,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 1977180203}
   - {fileID: 2139180073}
-  enemy: {fileID: 0}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &417186078
@@ -28663,6 +28663,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 49c65a3475d2a9b409def1908ce44497, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!1001 &451894764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29617,7 +29618,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedPipe: {fileID: 864904520}
+  otter: {fileID: 0}
   item: {fileID: 11400000, guid: 3669a612627fddb44ac29f00664a1395, type: 2}
+  particles: {fileID: 0}
 --- !u!65 &469661956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40622,10 +40625,40 @@ PrefabInstance:
       propertyPath: m_text
       value: Restart
       objectReference: {fileID: 0}
+    - target: {fileID: 1942999532741409319, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1221.9255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942999532741409319, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 544.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942999532741409319, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.3898926
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942999532741409319, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.8992
+      objectReference: {fileID: 0}
     - target: {fileID: 2095395129102507004, guid: 5cacd35b4f836d64497ea3e6516c4570,
         type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936272857966666983, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936272857966666983, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -88
       objectReference: {fileID: 0}
     - target: {fileID: 7707949982938422659, guid: 5cacd35b4f836d64497ea3e6516c4570,
         type: 3}
@@ -40765,8 +40798,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9151784929914620878, guid: 5cacd35b4f836d64497ea3e6516c4570,
         type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151784929914620878, guid: 5cacd35b4f836d64497ea3e6516c4570,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 20
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -56683,11 +56721,8 @@ MonoBehaviour:
   pipeCloseAnimation: {fileID: 0}
   removeableSludge:
   - {fileID: 96746608}
-  enemy: {fileID: 0}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &868587084
@@ -57392,11 +57427,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 1845176175}
   - {fileID: 0}
-  enemy: {fileID: 0}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &899827247
@@ -68217,6 +68249,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ea5a932b0ef241245b685bd2934a7ab4, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!1001 &1242326881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68972,6 +69005,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 49c65a3475d2a9b409def1908ce44497, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!1001 &1270674118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70434,11 +70468,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 208155134}
   - {fileID: 739078268}
-  enemy: {fileID: 0}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &1318387855
@@ -74589,6 +74620,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: f7c7d529651d06a49a0428e90617c122, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!65 &1477036913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76073,6 +76105,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 49c65a3475d2a9b409def1908ce44497, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!65 &1530475981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76665,7 +76698,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedPipe: {fileID: 0}
+  otter: {fileID: 0}
   item: {fileID: 11400000, guid: 5772cbfaf8696a748b0fd6813d466dbc, type: 2}
+  particles: {fileID: 0}
 --- !u!1001 &1547961727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77479,6 +77514,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 49c65a3475d2a9b409def1908ce44497, type: 2}
   itemSoundEffect: {fileID: 0}
   itemVolume: 1
+  particles: {fileID: 0}
 --- !u!1001 &1581716156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78724,11 +78760,8 @@ MonoBehaviour:
   removeableSludge:
   - {fileID: 1962083055}
   - {fileID: 953651860}
-  enemy: {fileID: 0}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &1618500459
@@ -80716,7 +80749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedPipe: {fileID: 1617289892}
+  otter: {fileID: 0}
   item: {fileID: 11400000, guid: ee8b0caf85bc1934d9c751d3de551458, type: 2}
+  particles: {fileID: 0}
 --- !u!1001 &1691524157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86778,11 +86813,8 @@ MonoBehaviour:
   pipeCloseAnimation: {fileID: 0}
   removeableSludge:
   - {fileID: 2020746746}
-  enemy: {fileID: 0}
   enemySpawner: []
-  oil: {fileID: 0}
   oilSpawner: []
-  bigOil: {fileID: 0}
   bigOilSpawner: []
   conditionsMet: 0
 --- !u!1001 &1903915008

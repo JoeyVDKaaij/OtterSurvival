@@ -105,14 +105,13 @@ public class AirController : MonoBehaviour
             if (deathAnimation.state != PlayState.Playing && !firstPlay)
             {
                 // Death scene
-                int lastSceneBuildIndex = SceneManager.sceneCountInBuildSettings - 1;
-                SceneManager.LoadScene(lastSceneBuildIndex);
+                SceneManager.LoadScene(2);
             }
         }
         else
         {
             // Death scene
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
 

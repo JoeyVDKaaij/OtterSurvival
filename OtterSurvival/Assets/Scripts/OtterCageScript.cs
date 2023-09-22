@@ -17,8 +17,10 @@ public class OtterCageScript : MonoBehaviour
     public void GateOpen()
     {
         // Let the pipe Script know it can close and do it's closing effect
-        particles.Play();
-        otter.SetActive(false);
+        if (particles != null)
+            particles.Play();
+        if (otter != null)
+            otter.SetActive(false);
         affectedPipe.GetComponent<PipeScript>().conditionsMet = true;
         Destroy(gameObject);
     }
