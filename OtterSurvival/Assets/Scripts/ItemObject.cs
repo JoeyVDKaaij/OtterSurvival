@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class ItemObject : ScriptableObject
 {
+    
     public enum ItemType
     {
         Null,
@@ -19,4 +22,7 @@ public class ItemObject : ScriptableObject
 
     [Tooltip("Set the item")]
     public ItemType type;
-}
+
+    
+  }
+
